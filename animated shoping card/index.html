@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animated shoping card</title>
+    <!--style -->
+    <link rel="stylesheet" href="css/style.css">
+    <!--remix icons library-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<!-- header -->
+<body>
+<header>
+    <div class="nav  container">
+        <a  href="#" class="logo">Ecommerce</a>
+        <div class="cart-icon" id="cart-icon">
+            <i class="ri-shopping-cart-2-line"></i>
+            <span class="cart-count" id="cart-count">0</span>
+        </div>
+    </div>
+</header>
+<!-- products -->
+<div class="products container">
+    <div class="product-card">
+        <img src="images/product-1.jpg" alt="" class="product-image">
+        <h2 class="product-name">mint green shirt</h2>
+        <div class="product-info">
+            <div class="price-data">
+                <h2 class="product-price">$299</h2>
+                <p>Details</p>
+            </div>
+            <div class="add-to-card"onclick="addTocard(this.parentElement.parentElement)">
+                <i class="ri-add-line"></i>
+            </div>
+        </div>
+ 
+    </div>
+    <div class="product-card">
+        <img src="images/product-2.jpg" alt="" class="product-image">
+        <h2 class="product-name">Retro Music </h2>
+        <div class="product-info">
+            <div class="price-data">
+                <h2 class="product-price">$199</h2>
+                <p>Details</p>
+            </div>
+            <div class="add-to-card"onclick="addTocard(this.parentElement.parentElement)">
+                <i class="ri-add-line"></i>
+            </div>
+        </div>
+ 
+    </div>
+    <div class="product-card">
+        <img src="images/product-3.jpg" alt="" class="product-image">
+        <h2 class="product-name">Plan Hodie</h2>
+        <div class="product-info">
+            <div class="price-data">
+                <h2 class="product-price">$180</h2>
+                <p>Details</p>
+            </div>
+            <div class="add-to-card"onclick="addTocard(this.parentElement.parentElement)">
+                <i class="ri-add-line"></i>
+            </div>
+        </div>
+ 
+    </div>
+    <div class="product-card">
+        <img src="images/product-4.jpg" alt="" class="product-image">
+        <h2 class="product-name">Golden Perfume</h2>
+        <div class="product-info">
+            <div class="price-data">
+                <h2 class="product-price">$107</h2>
+                <p>Details</p>
+            </div>
+            <div class="add-to-card"onclick="addTocard(this.parentElement.parentElement)">
+                <i class="ri-add-line"></i>
+            </div>
+        </div>
+ 
+    </div>
+    <div class="product-card">
+        <img src="images/product-5.jpg" alt="" class="product-image">
+        <h2 class="product-name">Sleek speaker</h2>
+        <div class="product-info">
+            <div class="price-data">
+                <h2 class="product-price">$120</h2>
+                <p>Details</p>
+            </div>
+            <div class="add-to-card"onclick="addTocard(this.parentElement.parentElement)">
+                <i class="ri-add-line"></i>
+            </div>
+        </div>
+ 
+    </div>
+    <div class="product-card">
+        <img src="images/product-6.jpg" alt="" class="product-image">
+        <h2 class="product-name">Smart Watch</h2>
+        <div class="product-info">
+            <div class="price-data">
+                <h2 class="product-price">$240</h2>
+                <p>Details</p>
+            </div>
+            <div class="add-to-card"onclick="addTocard(this.parentElement.parentElement)">
+                <i class="ri-add-line"></i>
+            </div>
+        </div>
+ 
+    </div>
+    <div class="product-card">
+        <img src="images/product-7.jpg" alt="" class="product-image">
+        <h2 class="product-name">Hand Page</h2>
+        <div class="product-info">
+            <div class="price-data">
+                <h2 class="product-price">$170</h2>
+                <p>Details</p>
+            </div>
+            <div class="add-to-card"onclick="addTocard(this.parentElement.parentElement)">
+                <i class="ri-add-line"></i>
+            </div>
+        </div>
+ 
+    </div>
+    <div class="product-card">
+        <img src="images/product-8.jpg" alt="" class="product-image">
+        <h2 class="product-name">Brown Shoe</h2>
+        <div class="product-info">
+            <div class="price-data">
+                <h2 class="product-price">$480</h2>
+                <p>Details</p>
+            </div>
+            <div class="add-to-card" onclick="addTocard(this.parentElement.parentElement)">
+                <i class="ri-add-line"></i>
+            </div>
+        </div>
+ 
+    </div>
+</div>
+
+<!-- card model -->
+
+<div class="card-model" id="card-model">
+    <div class="card-head">
+        <h2>Your Card</h2>
+        <button class="close-btn">X</button>
+    </div>
+    <ul class="cart-items">
+       
+    </ul>
+    <div class="card-total">total: $<span id="total-price">0</span></div>
+    <div class="check-out-btn">Check-Out</div>
+</div>
+
+
+
+<script src="js/script.js"></script>
+</body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</html>

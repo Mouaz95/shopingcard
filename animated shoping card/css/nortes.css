@@ -1,0 +1,257 @@
+/*box-shadow ----->
+
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1)
+  🔹 What Each Value Means:
+        1️⃣ 0 (X-offset) → No horizontal shadow (does not move left or right).
+        2️⃣ 1px (Y-offset) → Moves the shadow 1 pixel downward.
+        3️⃣ 4px (Blur radius) → The shadow becomes softer and more spread
+*/
+
+
+/* rem ------->
+
+🔹 How rem Works:
+        - 1rem = the font size of the <html> element
+        - By default, most browsers set font-size: 16px on <html>.
+        - So, 1rem = 16px
+        - 0.5rem = 8px
+        - 2rem = 32px
+
+        html {
+    font-size: 16px; ====>  Default 
+  }
+  
+  h1 {
+    font-size: 2rem;   ===> 2 × 16px = 32px
+  }
+  
+  p {
+    font-size: 1rem; ====> 1 × 16px = 16px 
+  }
+*/
+
+/* scroll-behaviour : smooth; ------>
+     🔹 scroll-behavior: smooth;
+            This makes the page scroll smoothly instead of jumping instantly
+            when clicking on a link that navigates to an anchor (#section).
+
+            html {
+                scroll-behavior: smooth;
+                }
+
+            <a href="#section1">Go to Section 1</a>
+*/
+
+/*
+   🔹 scroll-padding-top: 2rem;
+            This sets extra space at the top when scrolling to an element. Useful 
+            when a fixed navbar covers the top of a section.
+
+             body
+                scroll-padding-top: 2rem;
+                }
+
+                🔹 Now, when clicking a link (#section1), the page will stop 2rem above the section,
+                    ensuring it's not hidden behind a fixed header.
+
+*/
+
+/* to make text gradiant ------->
+
+    background: linear-gradient(to right, #e2aef4, #705eb4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;    
+
+    🔹 2. background-clip: text;
+            This makes the background color (gradient) apply only to the text 
+            instead of the entire element.
+
+      🔹 3. -webkit-text-fill-color: transparent;
+            This makes the text color transparent, allowing the gradient background to be visible inside the text.
+
+            Without this, the text would stay its default color, and the gradient wouldn't be visible.      
+*/
+/* images -------> 
+
+.product-image
+{
+    width: 100%;
+    max-height:250px;
+    height: 100%;
+    
+}
+*/
+
+/* Difference between position fixed and sticky ----->
+
+*/
+
+/* 100vh --- what is it means -->
+
+*/
+/*Cubic bazier ------>
+   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+*/
+
+/* json and local storage ----->
+
+   - let cartitems = JSON.parse(localStorage.getItem('cart-items')) || [];
+  localStorage.getItem('cart-items')
+
+This retrieves the value stored in the browser's localStorage under the key 'cart-items'.
+If nothing is stored under this key, it returns null.
+JSON.parse(...)
+
+localStorage only stores data as strings.
+If 'cart-items' exists, JSON.parse() converts the stored JSON string back into a JavaScript object/array.
+|| [] (Logical OR Operator)
+
+If JSON.parse(localStorage.getItem('cart-items')) returns null (meaning no cart data exists), the || [] part ensures that cartitems is initialized as an empty array ([]).
+This prevents errors when trying to work with cartitems later in the script.
+
+
+==> json .stringify 
+localStorage.setItem('cart-items', JSON.stringify([{ id: 1, name: "Laptop", price: 1000 }]));
+let cartitems = JSON.parse(localStorage.getItem('cart-items')) || [];
+console.log(cartitems); 
+// Output: [{ id: 1, name: "Laptop", price: 1000 }]
+
+==> json.parse 
+localStorage.removeItem('cart-items');
+let cartitems = JSON.parse(localStorage.getItem('cart-items')) || [];
+console.log(cartitems);
+// Output: []
+
+*/
+
+
+/* Find() ------->
+
+  using find() on search .. and check if exists ( returns the first matching object if it found ) 
+   - returns the first founded object ...
+   - return undefiened if it not founded 
+
+let cartItems = [
+  { name: "Laptop", price: 1000 },
+  { name: "Mouse", price: 50 }
+];
+
+const nameToFind = "Laptop";
+const existingItem = cartItems.find((item) => item.name === nameToFind);
+
+console.log(existingItem);
+// Output: { name: "Laptop", price: 1000 }
+
+const nameNotFound = "Keyboard";
+const notExistingItem = cartItems.find((item) => item.name === nameNotFound);
+
+console.log(notExistingItem);
+// Output: undefined
+
+*/
+
+/* some()------->
+
+    using some().. and check if exists ( true or false )
+   - returns true if it founded  ...
+   - return false if it not founded 
+*/
+
+
+/* Difference betwen some() .. Find() ......?
+
+    1. .find()
+            - Purpose: Returns the first matching element in the array.
+            - Return Type: The actual object if found, otherwise undefined.
+            - Use Case: When you need the full object that meets a condition.
+        Example:
+
+                        const cartItems = [
+                { name: "Laptop", price: 1000 },
+                { name: "Mouse", price: 50 },
+                { name: "Keyboard", price: 80 }
+                ];
+
+                const foundItem = cartItems.find((item) => item.price > 50);
+                console.log(foundItem); 
+                // Output: { name: "Laptop", price: 1000 } (first match)
+
+                const notFoundItem = cartItems.find((item) => item.price > 2000);
+                console.log(notFoundItem); 
+                // Output: undefined (no match)
+
+    2 .some()
+           - Purpose: Checks if at least one element meets a condition.
+           - Return Type: true if any element matches, otherwise false.
+           - Use Case: When you only need a yes/no answer, without the full object.
+
+            Example:
+
+                    const hasExpensiveItem = cartItems.some((item) => item.price > 50);
+                    console.log(hasExpensiveItem); 
+                    // Output: true (because Laptop and Keyboard are > 50)
+
+                    consjt hasVeryExpensiveItem = cartItems.some((item) => item.price > 2000);
+                    console.log(hasVeryExpensiveItem);
+                    // Output: false (no item > 2000)
+
+
+*/
+/* reduce() ------> return single value
+
+.reduce(Accumolator , singleitem ) method 
+is used to iterate over an array and accumulate a single value based on the array elements. It is commonly used for:
+
+    - Summing numbers
+    - Flattening arrays
+    - Counting occurrences
+    - Transforming data
+
+   total = cartItems.reduce((count,item) => count + item.quantity , 0);
+                                         => 0(default) + 10  ==> new count =(10)
+                                         => 10 + 5 ==> count =(15)
+                                         => 15 + 3 ==> count =(18)
+    total = cartItems.reduce((count,item) => count + item.quantity);
+          if there is no inittial value (0)
+          the initial value will be the first value of the arry (10)
+                                         => 10 + 5 ==> count =(15)
+                                         => 15 + 3 ==> count =(18)
+   note :- count = (count + item.quantity) + count
+           0 + 15 
+           15 + 10 
+
+
+        same as : 
+                let arr = [5,6,7,8]
+                
+                let count = 0;
+                for(items n of arr)
+                {
+                    count += n 
+                    or
+                    count = count + n
+                }
+
+*/
+
+/* Difference between 
+        - li.classList = 'cart-item';
+                - Completely replaces all existing classes with 'cart-item'.
+                - If the element already had other classes, they will be removed.
+
+        - li.classList.add('cart-item')
+                 - Adds 'cart-item' without removing existing classes.
+                 - If the class already exists, it won’t be added again.
+
+
+
+/*
+.cart-item {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-details {
+    flex-grow: 1; /* This section will expand to fill remaining space */
+}
